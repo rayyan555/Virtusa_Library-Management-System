@@ -8,19 +8,19 @@ public class Library {
     private ArrayList<User> users = new ArrayList<>();
     private ArrayList<Transaction> transactions = new ArrayList<>();
 
-   
+    
     public void addBook(Book book) {
         books.add(book);
         System.out.println(" Book added!");
     }
 
-    
+  
     public void addUser(User user) {
         users.add(user);
-        System.out.println("User added!");
+        System.out.println(" User added!");
     }
 
-    
+   
     public void searchBook(String keyword) {
         boolean found = false;
 
@@ -38,18 +38,20 @@ public class Library {
         }
     }
 
-    
-    public void issueBook(int bookId, String rollNo) {
+   
+    public void issueBook(int bookId, String rollNo, LocalDate dueDate) {
 
-        
         for (Book b : books) {
             if (b.getId() == bookId) {
 
                 if (!b.isIssued()) {
                     b.setIssued(true);
-                    transactions.add(new Transaction(bookId, rollNo));
 
-                    System.out.println("Book issued successfully!");
+                  
+                    transactions.add(new Transaction(bookId, rollNo, dueDate));
+
+                    System.out.println(" Book issued successfully!");
+                    System.out.println("Due Date: " + dueDate);
                     return;
 
                 } else {
@@ -62,35 +64,37 @@ public class Library {
         System.out.println("Book not found!");
     }
 
-   
-    public void returnBook(int bookId) {
+    
+public void returnBook(int bookId, LocalDate returnDate) {
 
-        for (Transaction t : transactions) {
-            if (t.getBookId() == bookId && t.getReturnDate() == null) {
+    for (Transaction t : transactions) {
+        if (t.getBookId() == bookId && t.getReturnDate() == null) {
 
-                LocalDate returnDate = LocalDate.now();
-                t.setReturnDate(returnDate);
+            t.setReturnDate(returnDate);
 
-                long lateDays = ChronoUnit.DAYS.between(
-                        t.getDueDate(), returnDate);
+            long lateDays = ChronoUnit.DAYS.between(
+                    t.getDueDate(), returnDate);
 
-                if (lateDays > 0) {
-                    System.out.println("💰 Fine: ₹" + (lateDays * 10));
-                } else {
-                    System.out.println(" Returned on time!");
-                }
-
-                
-                for (Book b : books) {
-                    if (b.getId() == bookId) {
-                        b.setIssued(false);
-                    }
-                }
-
-                return;
+            if (lateDays > 0) {
+                System.out.println("💰 Fine: ₹" + (lateDays * 10));
+            } else {
+                System.out.println("Returned on time!");
             }
-        }
 
-        System.out.println(" No active transaction found!");
+            System.out.println(" Return Date: " + returnDate);
+            System.out.println(" Due Date: " + t.getDueDate());
+
+          
+            for (Book b : books) {
+                if (b.getId() == bookId) {
+                    b.setIssued(false);
+                }
+            }
+
+            return;
+        }
     }
+
+    System.out.println(" No active transaction found!");
+}
 }
