@@ -141,7 +141,6 @@ A fully functional system that:
 
 ## 🖼️ Output Screenshots
 
-
 ### 📌 Main Menu
 
 ![Main Menu](images/Screenshot 2026-04-08 150349.png)
