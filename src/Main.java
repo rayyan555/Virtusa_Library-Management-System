@@ -24,7 +24,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n===== 📚 Library Menu =====");
+            System.out.println("\n===== Library Menu =====");
             System.out.println("1. Add Book");
             System.out.println("2. Add User");
             System.out.println("3. Search Book");
@@ -102,7 +102,7 @@ public class Main {
 
                 case 7:
                     lib.saveAllData();
-                    System.out.println("👋 Bye!");
+                    System.out.println(" Bye!");
                     System.exit(0);
 
                 default:

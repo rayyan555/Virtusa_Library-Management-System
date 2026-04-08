@@ -22,13 +22,13 @@ public class Library {
         saveTransactions();
     }
 
-   
     private void saveBooks() {
         try (FileWriter fw = new FileWriter("books.txt")) {
             for (Book b : books) {
                 fw.write(b.getId() + "," + b.getTitle() + "," + b.getAuthor() + "," + b.isIssued() + "\n");
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
     private void loadBooks() {
@@ -40,16 +40,17 @@ public class Library {
                 b.setIssued(Boolean.parseBoolean(d[3]));
                 books.add(b);
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
-  
     private void saveUsers() {
         try (FileWriter fw = new FileWriter("users.txt")) {
             for (User u : users) {
                 fw.write(u.getRollNo() + "," + u.getName() + "\n");
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
     private void loadUsers() {
@@ -59,7 +60,8 @@ public class Library {
                 String[] d = line.split(",");
                 users.add(new User(d[0], d[1]));
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
     private void saveTransactions() {
@@ -71,7 +73,8 @@ public class Library {
                         t.getDueDate() + "," +
                         (t.getReturnDate() == null ? "null" : t.getReturnDate()) + "\n");
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
 
     private void loadTransactions() {
@@ -84,49 +87,44 @@ public class Library {
                         d[1],
                         LocalDate.parse(d[2]),
                         LocalDate.parse(d[3]),
-                        d[4].equals("null") ? null : LocalDate.parse(d[4])
-                ));
+                        d[4].equals("null") ? null : LocalDate.parse(d[4])));
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     }
-
- 
 
     public void addBook(Book book) {
 
-    
-    for (Book b : books) {
-        if (b.getId() == book.getId()) {
-            System.out.println(" Book ID already exists!");
-            return;
+        for (Book b : books) {
+            if (b.getId() == book.getId()) {
+                System.out.println(" Book ID already exists!");
+                return;
+            }
         }
+
+        books.add(book);
+        saveBooks();
+        System.out.println(" Book added!");
     }
-
-    books.add(book);
-    saveBooks(); 
-    System.out.println(" Book added!");
-}
-
 
     public void addUser(User user) {
 
-   
-    for (User u : users) {
-        if (u.getRollNo().equals(user.getRollNo())) {
-            System.out.println(" User already exists with this Roll No!");
-            return;
+        for (User u : users) {
+            if (u.getRollNo().equals(user.getRollNo())) {
+                System.out.println(" User already exists with this Roll No!");
+                return;
+            }
         }
-    }
 
-    users.add(user);
-    saveUsers(); 
-    System.out.println(" User added!");
-}
+        users.add(user);
+        saveUsers();
+        System.out.println(" User added!");
+    }
 
     public void searchBook(String keyword) {
         for (Book b : books) {
             if (b.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
-                b.getAuthor().toLowerCase().contains(keyword.toLowerCase())) {
+                    b.getAuthor().toLowerCase().contains(keyword.toLowerCase())) {
                 System.out.println(b);
             }
         }
@@ -152,8 +150,8 @@ public class Library {
     public void returnBook(int bookId, String rollNo, LocalDate returnDate) {
         for (Transaction t : transactions) {
             if (t.getBookId() == bookId &&
-                t.getUserRollNo().equals(rollNo) &&
-                t.getReturnDate() == null) {
+                    t.getUserRollNo().equals(rollNo) &&
+                    t.getReturnDate() == null) {
 
                 t.setReturnDate(returnDate);
 
@@ -165,7 +163,8 @@ public class Library {
                     System.out.println(" Returned on time");
 
                 for (Book b : books) {
-                    if (b.getId() == bookId) b.setIssued(false);
+                    if (b.getId() == bookId)
+                        b.setIssued(false);
                 }
 
                 saveBooks();
@@ -183,10 +182,11 @@ public class Library {
         int issued = 0;
 
         for (Book b : books) {
-            if (b.isIssued()) issued++;
+            if (b.isIssued())
+                issued++;
         }
 
-        System.out.println("\n📊 ANALYTICS");
+        System.out.println("\n ANALYTICS");
         System.out.println("Total Books: " + books.size());
         System.out.println("Issued: " + issued);
         System.out.println("Available: " + (books.size() - issued));
