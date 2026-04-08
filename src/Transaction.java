@@ -8,7 +8,6 @@ public class Transaction {
     private LocalDate dueDate;
     private LocalDate returnDate;
 
-    
     public Transaction(int bookId, String userRollNo, LocalDate dueDate) {
         this.bookId = bookId;
         this.userRollNo = userRollNo;
@@ -17,39 +16,22 @@ public class Transaction {
         this.returnDate = null;
     }
 
-   
-    public int getBookId() {
-        return bookId;
-    }
-
-    public String getUserRollNo() {
-        return userRollNo;
-    }
-
-    public LocalDate getIssueDate() {
-        return issueDate;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public LocalDate getReturnDate() {
-        return returnDate;
-    }
-
-    
-    public void setReturnDate(LocalDate returnDate) {
+    public Transaction(int bookId, String userRollNo,
+                       LocalDate issueDate, LocalDate dueDate, LocalDate returnDate) {
+        this.bookId = bookId;
+        this.userRollNo = userRollNo;
+        this.issueDate = issueDate;
+        this.dueDate = dueDate;
         this.returnDate = returnDate;
     }
 
-  
-    @Override
-    public String toString() {
-        return "Book ID: " + bookId +
-               " | User: " + userRollNo +
-               " | Issue Date: " + issueDate +
-               " | Due Date: " + dueDate +
-               " | Return Date: " + (returnDate == null ? "Not Returned" : returnDate);
+    public int getBookId() { return bookId; }
+    public String getUserRollNo() { return userRollNo; }
+    public LocalDate getIssueDate() { return issueDate; }
+    public LocalDate getDueDate() { return dueDate; }
+    public LocalDate getReturnDate() { return returnDate; }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
     }
 }

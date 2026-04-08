@@ -1,105 +1,108 @@
+
 import java.util.Scanner;
 import java.time.LocalDate;
 
 public class Main {
+
+    
+    public static LocalDate parseDate(String input) {
+        input = input.replace("/", " ");
+        String[] parts = input.split(" ");
+
+        int d = Integer.parseInt(parts[0]);
+        int m = Integer.parseInt(parts[1]);
+        int y = Integer.parseInt(parts[2]);
+
+        return LocalDate.of(y, m, d);
+    }
+
     public static void main(String[] args) {
 
         Library lib = new Library();
+        lib.loadAllData();
+
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n=====  Library Menu =====");
+            System.out.println("\n===== 📚 Library Menu =====");
             System.out.println("1. Add Book");
             System.out.println("2. Add User");
             System.out.println("3. Search Book");
             System.out.println("4. Issue Book");
             System.out.println("5. Return Book");
-            System.out.println("6. Exit");
+            System.out.println("6. View Stats");
+            System.out.println("7. Exit");
 
             System.out.print("Enter choice: ");
             int choice = sc.nextInt();
+            sc.nextLine();
 
             switch (choice) {
 
-              
                 case 1:
-                    System.out.print("Enter Book ID: ");
-                    int bookId = sc.nextInt();
-                    sc.nextLine(); // clear buffer
+                    System.out.print("ID: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
 
-                    System.out.print("Enter Title: ");
+                    System.out.print("Title: ");
                     String title = sc.nextLine();
 
-                    System.out.print("Enter Author: ");
+                    System.out.print("Author: ");
                     String author = sc.nextLine();
 
-                    lib.addBook(new Book(bookId, title, author));
+                    lib.addBook(new Book(id, title, author));
                     break;
 
                 case 2:
-                    sc.nextLine(); 
-                    System.out.print("Enter Roll No: ");
-                    String rollNo = sc.nextLine();
+                    System.out.print("Roll No: ");
+                    String roll = sc.nextLine();
 
-                    System.out.print("Enter Name: ");
+                    System.out.print("Name: ");
                     String name = sc.nextLine();
 
-                    lib.addUser(new User(rollNo, name));
+                    lib.addUser(new User(roll, name));
                     break;
 
-                // Search Book
                 case 3:
-                    sc.nextLine();
-                    System.out.print("Enter keyword (title/author): ");
-                    String keyword = sc.nextLine();
-
-                    lib.searchBook(keyword);
+                    System.out.print("Search by Title or Author: ");
+                    lib.searchBook(sc.nextLine());
                     break;
 
-               
                 case 4:
-                    System.out.print("Enter Book ID: ");
-                    int issueBookId = sc.nextInt();
+                    System.out.print("Book ID: ");
+                    int bid = sc.nextInt();
                     sc.nextLine();
 
-                    System.out.print("Enter User Roll No: ");
-                    String issueRollNo = sc.nextLine();
+                    System.out.print("User Roll: ");
+                    String r = sc.nextLine();
 
-                    System.out.print("Enter Due Date (YYYY-MM-DD): ");
-                    String dateInput = sc.nextLine();
+                    System.out.print("Due Date (DD/MM/YYYY or DD MM YYYY): ");
+                    LocalDate dueDate = parseDate(sc.nextLine());
 
-                    try {
-                        LocalDate dueDate = LocalDate.parse(dateInput);
-
-                        lib.issueBook(issueBookId, issueRollNo, dueDate);
-
-                    } catch (Exception e) {
-                        System.out.println(" Invalid date format! Use YYYY-MM-DD");
-                    }
+                    lib.issueBook(bid, r, dueDate);
                     break;
 
-                
                 case 5:
-    System.out.print("Enter Book ID: ");
-    int returnBookId = sc.nextInt();
-    sc.nextLine();
+                    System.out.print("Book ID: ");
+                    int rid = sc.nextInt();
+                    sc.nextLine();
 
-    System.out.print("Enter Return Date (YYYY-MM-DD): ");
-    String returnInput = sc.nextLine();
+                    System.out.print("User Roll: ");
+                    String rr = sc.nextLine();
 
-    try {
-        LocalDate returnDate = LocalDate.parse(returnInput);
+                    System.out.print("Return Date (DD/MM/YYYY or DD MM YYYY): ");
+                    LocalDate returnDate = parseDate(sc.nextLine());
 
-        lib.returnBook(returnBookId, returnDate);
+                    lib.returnBook(rid, rr, returnDate);
+                    break;
 
-    } catch (Exception e) {
-        System.out.println(" Invalid date format! Use YYYY-MM-DD");
-    }
-    break;
-
-               
                 case 6:
-                    System.out.println(" Exiting...");
+                    lib.showStats();
+                    break;
+
+                case 7:
+                    lib.saveAllData();
+                    System.out.println("👋 Bye!");
                     System.exit(0);
 
                 default:
