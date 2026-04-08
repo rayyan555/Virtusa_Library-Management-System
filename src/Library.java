@@ -170,7 +170,7 @@ public class Library {
                 saveBooks();
                 saveTransactions();
 
-                System.out.println("📦 Book returned!");
+                System.out.println(" Book returned!");
                 return;
             }
         }
