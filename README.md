@@ -1,24 +1,37 @@
-# 📚 Library Management System
+# 📚 Library Management System (Java)
 
-A simple **Java-based console application** to manage library operations like adding books, registering users, issuing books, and returning books with fine calculation.
+## 📌 Problem Statement
+
+Managing library records manually is time-consuming and error-prone. This project provides a **Java-based console Library Management System** to automate book management, user handling, and transaction tracking efficiently.
+
+---
+
+## 🎯 Objectives
+
+* Manage books, users, and transactions
+* Track issued and returned books
+* Maintain due dates and calculate fines
+* Provide quick search functionality
 
 ---
 
 ## 🚀 Features
 
-* 📖 Add new books to the library
-* 👤 Register new users
+* 📚 Add, update, and manage books
+* 👤 User registration system
 * 🔍 Search books by title or author
-* 📕 Issue books to users
-* 📅 Return books with **fine calculation**
-* 🧾 Track transactions (issue & return details)
+* 📖 Issue books with due dates
+* 🔄 Return books with fine calculation
+* 💰 Automatic fine calculation (₹10/day late)
+* 📊 Library statistics (total, issued, available books)
+* 💾 Data persistence using file handling
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-* Java
-* OOP Concepts (Classes, Objects, Encapsulation)
+* Java (Core Java + OOP Concepts)
+* File Handling (`.txt` files)
 * Collections (`ArrayList`)
 * Date & Time API (`LocalDate`, `ChronoUnit`)
 
@@ -27,87 +40,86 @@ A simple **Java-based console application** to manage library operations like ad
 ## 📂 Project Structure
 
 ```
-Library-Management-System/
-│── Main.java
-│── Library.java
-│── Book.java
-│── User.java
-│── Transaction.java
+├── Main.java
+├── Library.java
+├── Book.java
+├── User.java
+├── Transaction.java
+├── books.txt
+├── users.txt
+├── transactions.txt
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## 📌 Class Overview
+## ⚙️ How the System Works
 
-### 1. User Class
+### 🔹 1. Book Management
 
-Represents a library user with roll number and name.
-
+Books are stored with ID, title, author, and availability status.
+Implemented using: 
 
 ---
 
-### 2. Library Class
+### 🔹 2. User Management
 
-Handles all core operations:
+Users are registered with roll number and name.
+Implemented using: 
+
+---
+
+### 🔹 3. Transaction Handling
+
+Tracks:
+
+* Issue date
+* Due date
+* Return date
+
+Implemented using: 
+
+---
+
+### 🔹 4. Core Logic (Library Class)
+
+Main functionalities include:
 
 * Add books & users
 * Search books
-* Issue books
-* Return books with fine calculation
+* Issue & return books
+* Fine calculation
+* Data saving/loading
 
-
----
-
-### 3. Main Class
-
-Provides menu-driven interface for user interaction.
-
+Implemented using: 
 
 ---
 
-### 4. Transaction Class
+### 🔹 5. User Interface (Console Menu)
 
-Stores issue/return details of books.
+Interactive menu-driven system:
 
+* Add Book
+* Add User
+* Search Book
+* Issue Book
+* Return Book
+* View Stats
 
----
-
-## ⚙️ How It Works
-
-1. User selects options from menu:
-
-   ```
-   1. Add Book
-   2. Add User
-   3. Search Book
-   4. Issue Book
-   5. Return Book
-   6. Exit
-   ```
-
-2. Book Issue:
-
-   * Checks availability
-   * Creates transaction
-   * Stores due date
-
-3. Book Return:
-
-   * Calculates late days
-   * Fine = ₹10 per day
-   * Updates return status
+Implemented using: 
 
 ---
 
-## ▶️ How to Run
+## ⚙️ Setup Instructions
 
-### Step 1: Compile
+### 1️⃣ Compile the Project
 
 ```bash
 javac *.java
 ```
 
-### Step 2: Run
+### 2️⃣ Run the Application
 
 ```bash
 java Main
@@ -115,35 +127,48 @@ java Main
 
 ---
 
-## 💡 Example
+## 📊 Outcome
 
-```
-Enter choice: 4
-Enter Book ID: 101
-Enter User Roll No: 22CS001
-Enter Due Date: 2026-04-10
+A fully functional system that:
 
-Book issued successfully!
-```
+* Reduces manual work in libraries
+* Tracks books and users efficiently
+* Prevents duplicate entries
+* Automatically calculates fines
+* Maintains persistent records
+
+---
+
+## 🖼️ Output Screenshots
+
 
 ---
 
-## 📈 Future Improvements
+## 💡 Key Concepts Used
 
-* GUI using JavaFX / Swing
-* Database integration (MySQL/PostgreSQL)
-* Admin login system
-* Book categories & filters
-* Email notifications
+* Object-Oriented Programming (OOP)
+
+  * Classes & Objects
+  * Encapsulation
+* File Handling in Java
+* Collections Framework
+* Date Handling (`LocalDate`)
+* Exception Handling
 
 ---
+
 
 ## 👨‍💻 Author
 
-**Rayyan A**
-BE CSE (AIML)
-KPR Institute of Engineering and Technology
+Rayyan A 
+
+KPR INSTITUTE OF ENGINEERING AND TECHNOLOGY 
+
+BE.CSE / Honours And Specialization in AIML
+
+Email: rayyanibnrahman903@gmail.com
 
 ---
+
 
 
