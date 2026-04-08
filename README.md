@@ -142,6 +142,55 @@ A fully functional system that:
 ## 🖼️ Output Screenshots
 
 
+### 📌 Main Menu
+
+![Main Menu](images/Screenshot 2026-04-08 150349.png)
+
+---
+
+### 📚 Add Book
+
+![Add Book](images/Screenshot 2026-04-08 150458.png)
+![Duplicate Book](images/Screenshot 2026-04-08 150534.png)
+
+---
+
+### 👤 Add User
+
+![Add User](images/Screenshot 2026-04-08 150614.png)
+![Duplicate User](images/Screenshot 2026-04-08 150641.png)
+
+---
+
+### 🔍 Search Book
+
+![Search Book](images/Screenshot 2026-04-08 150820.png)
+
+---
+
+### 📖 Issue Book
+
+![Issue Book](images/Screenshot 2026-04-08 150855.png)
+
+---
+
+### 🔄 Return Book
+
+![Return Book](images/Screenshot 2026-04-08 150957.png)
+![Late Return with Fine](images/Screenshot 2026-04-08 151125.png)
+
+---
+
+### 📊 View Statistics
+
+![Stats](images/Screenshot 2026-04-08 151142.png)
+
+---
+
+### 🚪 Exit
+
+![Exit](images/Screenshot 2026-04-08 151155.png)
+
 ---
 
 ## 💡 Key Concepts Used
