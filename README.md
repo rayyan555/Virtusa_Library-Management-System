@@ -1,12 +1,12 @@
-# 📚 Library Management System (Java)
+#  Library Management System (Java)
 
-## 📌 Problem Statement
+##  Problem Statement
 
 Managing library records manually is time-consuming and error-prone. This project provides a **Java-based console Library Management System** to automate book management, user handling, and transaction tracking efficiently.
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 * Manage books, users, and transactions
 * Track issued and returned books
@@ -15,20 +15,20 @@ Managing library records manually is time-consuming and error-prone. This projec
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 📚 Add, update, and manage books
-* 👤 User registration system
-* 🔍 Search books by title or author
-* 📖 Issue books with due dates
-* 🔄 Return books with fine calculation
-* 💰 Automatic fine calculation (₹10/day late)
-* 📊 Library statistics (total, issued, available books)
-* 💾 Data persistence using file handling
+*  Add, update, and manage books
+*  User registration system
+*  Search books by title or author
+*  Issue books with due dates
+*  Return books with fine calculation
+*  Automatic fine calculation (₹10/day late)
+*  Library statistics (total, issued, available books)
+*  Data persistence using file handling
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * Java (Core Java + OOP Concepts)
 * File Handling (`.txt` files)
@@ -37,7 +37,7 @@ Managing library records manually is time-consuming and error-prone. This projec
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 ├── Main.java
@@ -54,23 +54,23 @@ Managing library records manually is time-consuming and error-prone. This projec
 
 ---
 
-## ⚙️ How the System Works
+##  How the System Works
 
-### 🔹 1. Book Management
+###  1. Book Management
 
 Books are stored with ID, title, author, and availability status.
 Implemented using: 
 
 ---
 
-### 🔹 2. User Management
+###  2. User Management
 
 Users are registered with roll number and name.
 Implemented using: 
 
 ---
 
-### 🔹 3. Transaction Handling
+###  3. Transaction Handling
 
 Tracks:
 
@@ -82,7 +82,7 @@ Implemented using:
 
 ---
 
-### 🔹 4. Core Logic (Library Class)
+###  4. Core Logic (Library Class)
 
 Main functionalities include:
 
@@ -96,7 +96,7 @@ Implemented using:
 
 ---
 
-### 🔹 5. User Interface (Console Menu)
+###  5. User Interface (Console Menu)
 
 Interactive menu-driven system:
 
@@ -111,15 +111,15 @@ Implemented using:
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
-### 1️⃣ Compile the Project
+### 1️ Compile the Project
 
 ```bash
 javac *.java
 ```
 
-### 2️⃣ Run the Application
+### 2️ Run the Application
 
 ```bash
 java Main
@@ -127,7 +127,7 @@ java Main
 
 ---
 
-## 📊 Outcome
+##  Outcome
 
 A fully functional system that:
 
@@ -139,60 +139,60 @@ A fully functional system that:
 
 ---
 
-## 🖼️ Output Screenshots
+##  Output Screenshots
 
-### 📌 Main Menu
+###  Main Menu
 
 ![Main Menu](images/Screenshot%202026-04-08%20150349.png)
 
 ---
 
-### 📚 Add Book
+###  Add Book
 
 ![Add Book](images/Screenshot%202026-04-08%20150458.png)
 ![Duplicate Book](images/Screenshot%202026-04-08%20150534.png)
 
 ---
 
-### 👤 Add User
+###  Add User
 
 ![Add User](images/Screenshot%202026-04-08%20150614.png)
 ![Duplicate User](images/Screenshot%202026-04-08%20150641.png)
 
 ---
 
-### 🔍 Search Book
+###  Search Book
 
 ![Search Book](images/Screenshot%202026-04-08%20150820.png)
 
 ---
 
-### 📖 Issue Book
+###  Issue Book
 
 ![Issue Book](images/Screenshot%202026-04-08%20150855.png)
 
 ---
 
-### 🔄 Return Book
+###  Return Book
 
 ![Return Book](images/Screenshot%202026-04-08%20150957.png)
 ![Late Return with Fine](images/Screenshot%202026-04-08%20151125.png)
 
 ---
 
-### 📊 View Statistics
+###  View Statistics
 
 ![Stats](images/Screenshot%202026-04-08%20151142.png)
 
 ---
 
-### 🚪 Exit
+###  Exit
 
 ![Exit](images/Screenshot%202026-04-08%20151155.png)
 
 ---
 
-## 💡 Key Concepts Used
+##  Key Concepts Used
 
 * Object-Oriented Programming (OOP)
 
@@ -206,7 +206,7 @@ A fully functional system that:
 ---
 
 
-## 👨‍💻 Author
+##  Author
 
 Rayyan A 
 
