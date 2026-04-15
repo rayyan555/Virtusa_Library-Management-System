@@ -4,14 +4,6 @@
 
 Managing library records manually is time-consuming and error-prone. This project provides a **Java-based console Library Management System** to automate book management, user handling, and transaction tracking efficiently.
 
----
-
-##  Objectives
-
-* Manage books, users, and transactions
-* Track issued and returned books
-* Maintain due dates and calculate fines
-* Provide quick search functionality
 
 ---
 
